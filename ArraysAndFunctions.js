@@ -117,48 +117,87 @@ console.log("\n\n");
 console.log("9.	Write a function that takes an array of numbers and returns true if the sum of all the numbers in the array is greater than 100.");
 function numbersGreaterThan100(arr)  //sets the function to look at an array
 {
-sum=0;    // establishes that the beginning sum to be added is 0
-for(i=0; i<arr.length; i++)  // runs a loop through the length of the array to list the number of elements
+       sum=0;    // establishes that the beginning sum to be added is 0
+    for(i=0; i<arr.length; i++)  // runs a loop through the length of the array to list the number of elements
 {
     sum = sum + arr[i];  // adds the value of each of the elements returned by the for loop and adds them together with the beginning sum of 0
-}
-if(sum > 100)    // boolean if/else to return a value if the total sum is more or less than 100
-{
+    }
+    if(sum > 100)    // boolean if/else to return a value if the total sum is more or less than 100
+    {
     return true;
+    }
+    else
+    {
+    return false;
+    }
 }
-else
-{
+console.log("Number is greater than 100 ;", numbersGreaterThan100([50,52,1]));  // This line is unsuccessful as it returns a value that is false but should be true
+
+console.log("\n\n");
+
+console.log("10.	Write a function that takes an array of numbers and returns the average of all the elements in the array.");
+function average(arr){
+ 	var total = 0;
+  for(var i = 0; i < arr.length; i++) {
+    total += arr[i];  
+    var avg = total/arr.length;
+  }
+  return avg
+}
+console.log("Average of the array:", average([100,50,75]));
+console.log("\n\n");
+
+console.log("11.	Write a function that takes two arrays of numbers and returns true if the average of the elements in the first array is greater than the average of the elements in the second array.");
+function averageBetween(arr1,arr2){
+    var total1 = 0;
+    for(var i=0;i<arr1.length;i++){
+        total1 += arr1[i];
+        var avg1 = total1/arr1.length;
+    }
+    var total2 = 0;
+    for(var i=0;i<arr2.length;i++){
+        total2 += arr2[i];
+        var avg2 = total2/arr2.length;
+    }  
+    if (avg1 > avg2)
+    return true;
+    else
     return false;
 }
-}
-console.log("Number is greater than 100 ;", numbersGreaterThan100(50,52,1));  // This line is unsuccessful as it returns a value that is false but should be true
-
-console.log("\n\n");
-
-//console.log("10.	Write a function that takes an array of numbers and returns the average of all the elements in the array.");
-
-console.log("\n\n");
-
-//console.log("11.	Write a function that takes two arrays of numbers and returns true if the average of the elements in the first array is greater than the average of the elements in the second array.");
-
+console.log("First array average is greater than second array:", averageBetween([3,6,9],[6,9,12]));
 console.log("\n\n");
 
 console.log("12.	Write a function called willBuyDrink that takes a boolean isHotOutside, and a number moneyInPocket, and returns true if it is hot outside and if moneyInPocket is greater than 10.50.");
-function willBuyDrink(isHotOutside, moneyInPocket)  // creates an action to determine if 2 conditions are met
-{
-if((isHotOutside) && (moneyInPocket > 10.50))  // if/else to determine whether both conditions are true
-{
-return true;
-}
-else
-{
-return false;
-}
+function willBuyDrink(isHotOutside, moneyInPocket){ // creates an action to determine if 2 conditions are met
+    if((isHotOutside) && (moneyInPocket > 10.50))  // if/else to determine whether both conditions are true
+    {
+    return true;
+    }
+        else
+    {
+    return false;
+    }
 }
 var hotOutside = true; 
 var moneyInthePocket = 9.5;
-console.log("Drink can be bought : ",willBuyDrink(hotOutside, moneyInthePocket));  // prints out whether it is hotoutside and money is more than 10.50
+console.log("Drink can be bought : ",willBuyDrink(hotOutside, moneyInthePocket));  // prints out whether it is hot outside and money is more than 10.50
 console.log("\n\n");
 
-//console.log("13.	Create a function of your own that solves a problem. ");
-//console.log("•	In comments, write what the function does and why you created it.");
+console.log("13.	Create a function of your own that solves a problem. ");
+console.log("•	In comments, write what the function does and why you created it.");
+// the problem to be solved is whether to wear my hair curly or straight. 
+// the solution will be based on my mood and the weather. If is it rainy or I am feeling lazy it will return as true. 
+function curlyHair(weather,mood){       
+    if((weather) || (mood))
+    {
+    return true;
+    }
+        else
+    {
+    return false;
+    }
+}
+var isItRainy = false
+var amILazy = true
+console.log("I will wear my hair curly today :",curlyHair(isItRainy,amILazy));
+
